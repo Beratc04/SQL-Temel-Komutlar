@@ -1,50 +1,29 @@
-# SQL-Temel-Komutlar
-SQL Hafta 1
-
-Bu repo, temel SQL sorgularını içeren bir PostgreSQL çalışma dosyası içermektedir. Aşağıda, çalışanlar ve departmanlar tabloları üzerinde yapılan sorgular açıklanmaktadır.
+Bu repo, temel SQL sorgularını içeren bir PostgreSQL çalışma dosyası içermektedir. Aşağıda, employees ve departmans tabloları üzerinde yapılan sorgular açıklanmaktadır.
 
 Kullanılan SQL Sorguları
 
-1. Çalışanların Belirli Kolonlarını Getirme
+1. Çalışanların Belirli Kolonlarını Getirme (SELECT)
 
-SELECT FirstName, LastName, Salary
-FROM Employees;
+Bu sorgu, SELECT kullanarak Employees tablosundaki belirli sütunları getirir.
 
-Bu sorgu, Employees tablosundaki sadece FirstName, LastName ve Salary sütunlarını getirir.
+2. Benzersiz Departmanları Listeleme (SELECT DISTINCT)
 
-2. Benzersiz Departmanları Listeleme
+Bu sorgu, SELECT DISTINCT kullanarak Departments tablosundaki departman isimlerini tekrar olmadan listeler.
 
-SELECT DISTINCT DepartmentName
-FROM Departments;
+3. IT Departmanındaki Çalışanları Getirme (WHERE)
 
-Bu sorgu, Departments tablosundaki DepartmentName sütununda yer alan benzersiz departmanları listeler.
+Bu sorgu, WHERE kullanarak sadece IT departmanında çalışan kişilerin bilgilerini filtreler.
 
-3. IT Departmanındaki Çalışanları Getirme
+4. Çalışanları Maaşlarına Göre Sıralama (ORDER BY)
 
-SELECT * FROM Employees
-WHERE DepartmentID = 1;
+Bu sorgu, ORDER BY kullanarak çalışanları maaşlarına göre büyükten küçüğe sıralar.
 
-Bu sorgu, IT departmanında çalışan kişilerin tüm bilgilerini getirir. IT departmanının DepartmentID değeri 1 olarak kabul edilmiştir.
+5. Çalışanların İsim ve Soyisimlerini Birleştirme (|| Operatörü)
 
-4. Çalışanları Maaşlarına Göre Sıralama
-
-SELECT * FROM Employees
-ORDER BY Salary DESC;
-
-Bu sorgu, çalışanları maaşlarına göre büyükten küçüğe sıralar (DESC: azalan sıralama).
-
-5. Çalışanların İsim ve Soyisimlerini Birleştirme
-
-SELECT FirstName || ' ' || LastName AS FullName, *
-FROM Employees;
-
-Bu sorgu, FirstName ve LastName sütunlarını birleştirerek "FullName" adında yeni bir sütun oluşturur.
+Bu sorgu, || operatörünü kullanarak çalışanların isim ve soyisim sütunlarını birleştirerek tam adlarını oluşturur.
 
 Nasıl Kullanılır?
 
 PostgreSQL veritabanınıza bağlanın.
 
 Yukarıdaki SQL sorgularını çalıştırarak tablolar üzerinde test edebilirsiniz.
-
-Bu sorgular, SQL temellerini anlamak ve verileri analiz etmek için faydalı olacaktır.
-
